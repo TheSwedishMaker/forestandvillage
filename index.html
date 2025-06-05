@@ -160,7 +160,7 @@
 </footer>
 
 <!-- Modal HTML -->
-<div id="productModal" class="modal">
+<div id="productModal" class="modal" style="display: none;">
   <div class="modal-content">
     <span class="close" onclick="closeModal()">&times;</span>
 <img id="modalImage" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="Product Image" />
@@ -171,16 +171,29 @@
 
 <!-- Modal Script -->
 <script>
+  let modalActive = false;
+
   function openModal(title, desc, imgSrc) {
+    if (!imgSrc || modalActive) return;
+    
+    modalActive = true;
+
     document.getElementById('modalTitle').innerText = title;
     document.getElementById('modalDesc').innerText = desc;
     document.getElementById('modalImage').src = imgSrc;
-    document.getElementById('productModal').style.display = 'block';
+    document.getElementById('productModal').style.display = 'flex';
   }
 
   function closeModal() {
+    modalActive = false;
     document.getElementById('productModal').style.display = 'none';
+    document.getElementById('modalImage').src = ""; // reset image
   }
+
+  window.onload = function () {
+    // ensure modal is closed on page load
+    closeModal();
+  };
 
   window.onclick = function(event) {
     const modal = document.getElementById('productModal');
