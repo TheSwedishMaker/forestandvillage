@@ -13,28 +13,28 @@
       color: #333;
     }
 
-    header {
-      background: url('forestandvillage-01.png') center/cover no-repeat;
-      color: white;
-      text-align: center;
-      padding: 100px 20px;
-      size: 20px 40px; 
+    .navbar {
+      display: flex;
+      align-items: center;
+      padding: 20px;
+      background: white;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     }
 
-    header h1 {
-      font-size: 3em;
-      margin: 0;
-    }
-
-    header p {
-      font-size: 1.2em;
-      margin-top: 10px;
+    .navbar img {
+      height: 50px;
     }
 
     .content {
       padding: 40px 20px;
       max-width: 1200px;
       margin: 0 auto;
+    }
+
+    .content h2 {
+      text-align: center;
+      font-size: 2em;
+      margin-bottom: 40px;
     }
 
     .gallery {
@@ -64,15 +64,14 @@
 </head>
 <body>
 
-<header>
-  <h1>Forest & Village</h1>
-  <p>Handmade goods inspired by nature</p>
-</header>
+<div class="navbar">
+  <img src="forestandvillage-01.jpg" alt="Forest & Village logo" />
+</div>
 
 <div class="content">
   <h2>Our Products</h2>
   <div class="gallery">
-    <img src="_DSF5499.jpg" alt="Brass Snus Box" />
+    <img src="brasssnus.jpg" alt="Brass Snus Box" />
     <img src="https://via.placeholder.com/400x300?text=Leather+Wallet" alt="Leather Wallet" />
     <img src="https://via.placeholder.com/400x300?text=Ceramic+Cup" alt="Ceramic Cup" />
   </div>
