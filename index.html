@@ -52,12 +52,15 @@
     }
 
     .gallery img {
-      width: 100%;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      cursor: pointer;
-      transition: transform 0.2s;
-    }
+  width: 100%;
+  aspect-ratio: 1 / 1;         /* Force square shape */
+  object-fit: cover;           /* Crop inside the square but keep proportions */
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+    
 
     .gallery img:hover {
       transform: scale(1.03);
@@ -106,6 +109,7 @@
 
 .modal-content img {
   max-width: 100%;
+  height: auto;              /* ✅ keeps original aspect ratio */
   border-radius: 8px;
   margin-bottom: 1rem;
 }
